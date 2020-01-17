@@ -1,0 +1,131 @@
+.cursor {
+  cursor: pointer;
+}
+
+#MovieApp {
+  background: #000;
+  padding: 7em 0;
+}
+
+#MovieApp #ListVue .card {
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+#MovieApp #ListVue .card * {
+  user-select: none !important;
+  -ms-user-select: none !important;
+  -moz-user-select: none !important;
+  -o-user-select: none !important;
+  -webkit-user-select: none !important;
+}
+
+#MovieApp #ListVue .card img {
+  opacity: 0.7;
+}
+
+#MovieApp #ListVue .card:hover img {
+  opacity: 1;
+}
+
+#MovieApp #MoviesNavBar .main-list {
+  cursor: pointer !important;
+  color: #eee;
+  text-transform: capitalize;
+  border: 1px solid #eee;
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
+}
+
+#MovieApp #MoviesNavBar .main-list:hover {
+  background: #eee !important;
+  color: #000 !important;
+}
+
+#MovieApp #MoviesNavBar .active {
+  background: #eee !important;
+  color: #000 !important;
+}
+
+#MovieApp #MoviesNavBar .genres-list .genres-list-dropdown {
+  cursor: pointer !important;
+  color: #eee;
+  text-transform: capitalize;
+  border: 1px solid #eee;
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
+  background: none !important;
+  top: 0;
+}
+
+#MovieApp #MoviesNavBar .genres-list .active {
+  background: #eee !important;
+  color: #000 !important;
+}
+
+#MovieApp #MoviesNavBar .genres-list .dropdown-menu {
+  height: 50vh;
+  top: 0;
+  position: absolute;
+  overflow-x: hidden;
+  left: auto !important;
+  right: 0 !important;
+}
+
+#MovieApp #MoviesNavBar .genres-list .dropdown-menu .dropdown-item {
+  cursor: pointer;
+}
+
+#MovieApp #Pagination {
+  position: absolute !important;
+  left: 50% !important;
+  transform: translateX(-50%) !important;
+  -ms-transform: translateX(-50%) !important;
+  -moz-transform: translateX(-50%) !important;
+  -webkit-transform: translateX(-50%) !important;
+}
+
+#MovieApp #Pagination * {
+  cursor: pointer;
+}
+
+#MovieApp #Pagination .pagination {
+  background: #000 !important;
+  border: 1px solid #eee !important;
+}
+
+#MovieApp #Pagination .pagination span {
+  background: #000;
+  color: #eee;
+}
+
+#MovieApp #Pagination .pagination .active {
+  background: #eee;
+  color: #222;
+}
+
+#MovieApp #Display {
+  position: relative;
+  position: fixed;
+  z-index: 999;
+  left: 0;
+  top: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.8);
+  padding: 7em 0 0 0;
+}
+
+#MovieApp #Display .close {
+  cursor: pointer;
+  color: red;
+  text-shadow: none;
+  font-weight: 900;
+  font-size: 3em;
+}
+
+#MovieApp #Display * {
+  color: #eee;
+}
+

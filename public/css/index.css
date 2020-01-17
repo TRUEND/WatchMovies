@@ -1,0 +1,43 @@
+.cursor {
+  cursor: pointer;
+}
+
+body {
+  background-size: 100% 110%;
+  background-repeat: no-repeat;
+  width: 100vh;
+  height: 100vh;
+}
+
+#registerBox {
+  width: 100vw;
+  position: absolute !important;
+  top: 50% !important;
+  transform: translateY(-50%);
+  -ms-transform: translateY(-50%);
+  -moz-transform: translateY(-50%);
+  -o-transform: translateY(-50%);
+  -webkit-transform: translateY(-50%);
+}
+
+#registerBox #homeTitle h1 {
+  text-align: center;
+  font-size: 5em;
+  padding: 1.5em 0 0 0;
+  color: #eee;
+}
+
+#registerBox #homeTitle p {
+  color: #eee;
+  text-align: center;
+}
+
+#registerBox #formBox {
+  border-radius: 10px !important;
+  background-color: rgba(255, 255, 255, 0.8);
+}
+
+#registerBox #formBox .title {
+  color: #222;
+}
+

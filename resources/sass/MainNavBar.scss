@@ -1,0 +1,35 @@
+@import "./_variables";
+#MainNavBar{
+    z-index: 1000;
+    background-color: rgba(0,0,0,0.9);
+    *{
+        color:$secondColor;
+    }
+
+    #NavSearchEngine{
+        input{
+            color:$darkColor;
+        }
+    }
+
+    .dropdown{
+        .dropdown-menu{
+            *{
+                color:$darkColor;
+            }
+        }
+    }
+    #navbarDropdown{
+        cursor: pointer !important;
+
+        #NavProfileImage{
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            padding: 1px;
+            background: $secondColor;
+        }
+    }
+    
+
+}
