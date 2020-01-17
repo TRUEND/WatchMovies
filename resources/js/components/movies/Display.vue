@@ -12,7 +12,7 @@
                     :src="`https://image.tmdb.org/t/p/w500/${MovieInDisplay.poster_path}`" alt="">
                 </div>
 
-                <div class='col-md-7'>
+                <div class='col-md-7 position-relative'>
                     <h2>{{MovieInDisplay.title}}</h2>
                     <hr class="line" style="border-color:#fff">
                     <p><b>Released: {{MovieInDisplay.release_date}}</b> | <b>{{MovieInDisplay.runtime}} mins</b></p>
@@ -22,6 +22,9 @@
                         <p>{{MovieInDisplay.overview}}</p>
                     </div>
 
+                    <button id="AddFavorite" class="btn" title="add to your favorite list">
+                        Add to favorite<img :src="'/_icons/heart.png'" alt="">
+                    </button>
                 </div>
 
             </div>

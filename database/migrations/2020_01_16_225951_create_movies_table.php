@@ -15,13 +15,10 @@ class CreateMoviesTable extends Migration
     {
         Schema::create('movies', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->string('title', 100);
-            $table->string('thumbnail', 255);
-            $table->text('description', 500)->nullable();
-            $table->integer('review')->max(5)->default(0);
-            //proprieties are things that can be added later.
             $table->jsonb('proprieties')->nullable();
+            
             $table->timestamps();
+            $table->string('nickname')->index();
         });
     }
 

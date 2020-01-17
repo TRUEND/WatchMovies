@@ -30,13 +30,14 @@
 
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     @isset($User)
-                        <!-- Left Side Of Navbar -->
-                        <ul class="navbar-nav mr-auto">
+                        <!-- Search Engine * I'm going to remove it for now.-->
+                        
+                        <!--<ul class="navbar-nav mr-auto">
                             <form id="NavSearchEngine" class="form" action="" method="get">
                                 <input type="text" placeholder="Search movie" 
                                 name="SearchString" class="form-control">
                             </form>
-                        </ul>
+                        </ul>-->
                     @endisset
                    
                     <!-- Right Side Of Navbar -->

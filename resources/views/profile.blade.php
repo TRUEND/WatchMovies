@@ -91,7 +91,7 @@
                             <label for="nickname">Description</label>
                             
                             <textarea name="description" class="form-control @error('description') is-invalid 
-                            @enderror" id="validationTextarea" placeholder="Describe yourself ..." 
+                            @enderror" id="validationTextarea" placeholder="{{$User->description ?? "describe yourself..."}}" 
                             value="{{ old('description') ?? $User->description }}"></textarea>
                             
                             @error('description')

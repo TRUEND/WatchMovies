@@ -129,3 +129,27 @@
   color: #eee;
 }
 
+#MovieApp #Display #AddFavorite {
+  position: absolute;
+  bottom: 10px;
+  right: 0;
+  color: #999;
+}
+
+#MovieApp #Display #AddFavorite img {
+  width: 35px;
+  height: 35px;
+  opacity: 0.4;
+  margin: 0 0 0 5px;
+}
+
+#MovieApp #Display #AddFavorite:hover,
+#MovieApp #Display #AddFavorite .active {
+  color: #eee;
+}
+
+#MovieApp #Display #AddFavorite:hover img,
+#MovieApp #Display #AddFavorite .active img {
+  opacity: 1;
+}
+

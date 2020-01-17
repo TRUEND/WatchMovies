@@ -126,5 +126,27 @@
         *{
             color:#eee;
         }
+
+        #AddFavorite
+        {
+            position: absolute;
+            bottom: 10px;
+            right: 0;
+            color: #999;
+            img{
+                width: 35px; height: 35px;
+                opacity: 0.4;
+                margin: 0 0 0 5px;
+            }
+
+            &:hover, .active
+            {
+                color: $secondColor;
+                img{
+                    opacity: 1;
+                }
+                
+            }
+        }
     }
 }

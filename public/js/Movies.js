@@ -1966,6 +1966,9 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
 /* harmony default export */ __webpack_exports__["default"] = ({
   methods: {
     CloseDisplay: function CloseDisplay() {
@@ -20350,7 +20353,7 @@ var render = function() {
               })
             ]),
             _vm._v(" "),
-            _c("div", { staticClass: "col-md-7" }, [
+            _c("div", { staticClass: "col-md-7 position-relative" }, [
               _c("h2", [_vm._v(_vm._s(_vm.MovieInDisplay.title))]),
               _vm._v(" "),
               _c("hr", {
@@ -20370,7 +20373,22 @@ var render = function() {
                 _c("h6", [_vm._v("Overview")]),
                 _vm._v(" "),
                 _c("p", [_vm._v(_vm._s(_vm.MovieInDisplay.overview))])
-              ])
+              ]),
+              _vm._v(" "),
+              _c(
+                "button",
+                {
+                  staticClass: "btn",
+                  attrs: {
+                    id: "AddFavorite",
+                    title: "add to your favorite list"
+                  }
+                },
+                [
+                  _vm._v("\n                    Add to favorite"),
+                  _c("img", { attrs: { src: "/_icons/heart.png", alt: "" } })
+                ]
+              )
             ])
           ])
         ])
