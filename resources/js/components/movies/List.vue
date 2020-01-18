@@ -1,10 +1,10 @@
 <template>
     <div id="ListVue">
 
-        <div v-if="MoviesHasResults" class="container" >
+        <div class="container">
             
-            <div class="row">
-                <div v-for="movie in Movies.results" :key="movie.id" class="col-2 mb-3">
+            <div v-if="MoviesHasResults || UserHasFavoritesMovies" class="row_movies row">
+                <div v-for="movie in movies.results" :key="movie.id" class="col-2 mb-3">
                     <div class="card border-0" @click="GetMovieInDisplay(movie.id)">
                         
                         <img :src="`https://image.tmdb.org/t/p/w200/${movie.poster_path}`" class="card-img-top" alt="">
@@ -16,12 +16,16 @@
                 </div>
             </div>
 
+            <div v-else-if="!UserHasFavoritesMovies">
+                <h1 class="text-light text-center py-5">You do not have favorite movies.</h1>
+                <p class="text-center text-light">To add a movie to this list you must click on the heart block in each movie you desire to be your favorites.</p>
+            </div>  
+
+            <div v-else>
+                <h1 class="text-light text-center py-5">There are no movies in this category.</h1>
+            </div>
+
         </div>
-
-        <div>
-            <h1 class="text-lg-light">You do not have any movies added as favorite.</h1>
-        </div>  
-
     
     </div>
 
@@ -31,24 +35,27 @@
 export default {
     data(){
         return{
-
+            numOfMovies : 0,
         }
     },
     computed:{
-        Movies()
-        {
-            return this.$root.Movies;
-        },
         MoviesHasResults()
         {
-            return this.Movies != null;
+            return this.numOfMovies > 0;
+        },
+        UserHasFavoritesMovies()
+        {
+            return this.$root.FavoriteMovies.length > 0;
         },
         isFavorite()
         {
             return this.$root.listAt == 'your_favorites';
         },
+        movies()
+        {
+            return this.$root.Movies;
+        }
        
-      
     },
     methods:{
         GetMovieInDisplay(movieId)
@@ -57,10 +64,12 @@ export default {
         },
         
     },
- 
-
-    
-
+    watch:{
+        movies()
+        {
+            this.numOfMovies = this.$root.Movies.results.length;
+        }
+    },
 }
 </script>
 

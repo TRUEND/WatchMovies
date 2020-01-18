@@ -9,7 +9,7 @@ import List from './components/movies/List.vue';
 import Display from './components/movies/Display.vue';
 import Pagination from './components/movies/pagination.vue';
 
-new Vue({
+var vm = new Vue({
     el:"#MovieApp",
     components:{
         NavMovieType,
@@ -19,7 +19,7 @@ new Vue({
     },
     data:{
         Api_key: "217641a2c7e82793e8706423804e5904",
-        Movies : null,
+        Movies : {results:[], total_pages: 1},
         Genres : null,
         isMainList: true,
         listAt: 'popular',
@@ -27,7 +27,7 @@ new Vue({
         ActualGenre : 1,
         IsDisplay: false,
         MovieInDisplay: {},
-        FavoriteMovies:{},
+        FavoriteMovies:[],
         AuthUser: null,
     },
     methods:{
@@ -86,7 +86,7 @@ new Vue({
         //functions for main list
         GetMovieFromList(listName, page = 1)
         {
-            this.Movies = null;
+            this.Movies = {results:[], total_pages: 5000};
             axios.get(this.GetMovies(listName, page)).
             then(res=> {
                 let movies = res.data;
@@ -113,7 +113,7 @@ new Vue({
         //This function is gets the auth user its favorites movies
         GetAuthFavorites : async function()
         {
-            this.Movies = null;
+            this.Movies = {results:[], total_pages: 5000};
             let res = await axios.get(this.GetMovies('your_favorites'));
     
             this.FavoriteMovies = await res.data;
@@ -221,8 +221,6 @@ new Vue({
         await this.GetListOfGenres();
         await this.GetMovieFromList('popular');
         await this.GetAuthFavorites();
-
-
         
     }   
 });

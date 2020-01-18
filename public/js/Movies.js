@@ -2052,24 +2052,38 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
 /* harmony default export */ __webpack_exports__["default"] = ({
   data: function data() {
-    return {};
+    return {
+      numOfMovies: 0
+    };
   },
   computed: {
-    Movies: function Movies() {
-      return this.$root.Movies;
-    },
     MoviesHasResults: function MoviesHasResults() {
-      return this.Movies != null;
+      return this.numOfMovies > 0;
+    },
+    UserHasFavoritesMovies: function UserHasFavoritesMovies() {
+      return this.$root.FavoriteMovies.length > 0;
     },
     isFavorite: function isFavorite() {
       return this.$root.listAt == 'your_favorites';
+    },
+    movies: function movies() {
+      return this.$root.Movies;
     }
   },
   methods: {
     GetMovieInDisplay: function GetMovieInDisplay(movieId) {
       this.$root.GetMovieInDisplay(movieId);
+    }
+  },
+  watch: {
+    movies: function movies() {
+      this.numOfMovies = this.$root.Movies.results.length;
     }
   }
 });
@@ -21211,12 +21225,12 @@ var render = function() {
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
   return _c("div", { attrs: { id: "ListVue" } }, [
-    _vm.MoviesHasResults
-      ? _c("div", { staticClass: "container" }, [
-          _c(
+    _c("div", { staticClass: "container" }, [
+      _vm.MoviesHasResults || _vm.UserHasFavoritesMovies
+        ? _c(
             "div",
-            { staticClass: "row" },
-            _vm._l(_vm.Movies.results, function(movie) {
+            { staticClass: "row_movies row" },
+            _vm._l(_vm.movies.results, function(movie) {
               return _c("div", { key: movie.id, staticClass: "col-2 mb-3" }, [
                 _c(
                   "div",
@@ -21252,24 +21266,27 @@ var render = function() {
             }),
             0
           )
-        ])
-      : _vm._e(),
-    _vm._v(" "),
-    _vm._m(0)
+        : !_vm.UserHasFavoritesMovies
+        ? _c("div", [
+            _c("h1", { staticClass: "text-light text-center py-5" }, [
+              _vm._v("You do not have favorite movies.")
+            ]),
+            _vm._v(" "),
+            _c("p", { staticClass: "text-center text-light" }, [
+              _vm._v(
+                "To add a movie to this list you must click on the heart block in each movie you desire to be your favorites."
+              )
+            ])
+          ])
+        : _c("div", [
+            _c("h1", { staticClass: "text-light text-center py-5" }, [
+              _vm._v("There are no movies in this category.")
+            ])
+          ])
+    ])
   ])
 }
-var staticRenderFns = [
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("div", [
-      _c("h1", { staticClass: "text-lg-light" }, [
-        _vm._v("You do not have any movies added as favorite.")
-      ])
-    ])
-  }
-]
+var staticRenderFns = []
 render._withStripped = true
 
 
@@ -33666,7 +33683,7 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
 
 
 
-new vue__WEBPACK_IMPORTED_MODULE_1___default.a({
+var vm = new vue__WEBPACK_IMPORTED_MODULE_1___default.a({
   el: "#MovieApp",
   components: {
     NavMovieType: _components_movies_NavMovieType_vue__WEBPACK_IMPORTED_MODULE_4__["default"],
@@ -33676,7 +33693,10 @@ new vue__WEBPACK_IMPORTED_MODULE_1___default.a({
   },
   data: {
     Api_key: "217641a2c7e82793e8706423804e5904",
-    Movies: null,
+    Movies: {
+      results: [],
+      total_pages: 1
+    },
     Genres: null,
     isMainList: true,
     listAt: 'popular',
@@ -33684,7 +33704,7 @@ new vue__WEBPACK_IMPORTED_MODULE_1___default.a({
     ActualGenre: 1,
     IsDisplay: false,
     MovieInDisplay: {},
-    FavoriteMovies: {},
+    FavoriteMovies: [],
     AuthUser: null
   },
   methods: {
@@ -33790,7 +33810,10 @@ new vue__WEBPACK_IMPORTED_MODULE_1___default.a({
       var _this2 = this;
 
       var page = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : 1;
-      this.Movies = null;
+      this.Movies = {
+        results: [],
+        total_pages: 5000
+      };
       axios__WEBPACK_IMPORTED_MODULE_2___default.a.get(this.GetMovies(listName, page)).then(function (res) {
         var movies = res.data; //for favorites movies.
 
@@ -33821,7 +33844,10 @@ new vue__WEBPACK_IMPORTED_MODULE_1___default.a({
           while (1) {
             switch (_context3.prev = _context3.next) {
               case 0:
-                this.Movies = null;
+                this.Movies = {
+                  results: [],
+                  total_pages: 5000
+                };
                 _context3.next = 3;
                 return axios__WEBPACK_IMPORTED_MODULE_2___default.a.get(this.GetMovies('your_favorites'));
 

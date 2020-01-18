@@ -12,6 +12,10 @@ main {
   padding: 7em 0;
 }
 
+#MovieApp #ListVue .row_movies {
+  min-height: 100vh !important;
+}
+
 #MovieApp #ListVue .card {
   background: none;
   border: none;

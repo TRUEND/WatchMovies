@@ -5,7 +5,7 @@
     <div id="MovieApp" >
         
         <nav-movie-type></nav-movie-type>
-        <list></list>
+        <list :movies="Movies" ></list>
         <Display></Display>
         <pagination></pagination>
 
