@@ -18,6 +18,10 @@
 
         </div>
 
+        <div>
+            <h1 class="text-lg-light">You do not have any movies added as favorite.</h1>
+        </div>  
+
     
     </div>
 
@@ -43,6 +47,7 @@ export default {
         {
             return this.$root.listAt == 'your_favorites';
         },
+       
       
     },
     methods:{

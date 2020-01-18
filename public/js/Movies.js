@@ -2048,6 +2048,10 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
 /* harmony default export */ __webpack_exports__["default"] = ({
   data: function data() {
     return {};
@@ -21249,10 +21253,23 @@ var render = function() {
             0
           )
         ])
-      : _vm._e()
+      : _vm._e(),
+    _vm._v(" "),
+    _vm._m(0)
   ])
 }
-var staticRenderFns = []
+var staticRenderFns = [
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", [
+      _c("h1", { staticClass: "text-lg-light" }, [
+        _vm._v("You do not have any movies added as favorite.")
+      ])
+    ])
+  }
+]
 render._withStripped = true
 
 

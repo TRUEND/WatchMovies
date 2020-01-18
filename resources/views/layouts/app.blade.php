@@ -80,7 +80,7 @@
             </div>
         </nav>
 
-        <main>
+        <main style="min-height:100vh;">
             @yield('content')
         </main>
 

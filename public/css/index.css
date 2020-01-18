@@ -5,8 +5,10 @@
 body {
   background-size: 100% 110%;
   background-repeat: no-repeat;
-  width: 100vh;
-  height: 100vh;
+}
+
+body main {
+  min-height: 100vh;
 }
 
 #registerBox {
