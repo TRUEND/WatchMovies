@@ -15,7 +15,7 @@ class CreateMoviesTable extends Migration
     {
         Schema::create('movies', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->jsonb('proprieties')->nullable();
+            $table->integer('api_movie_id');
             
             $table->timestamps();
             $table->string('nickname')->index();

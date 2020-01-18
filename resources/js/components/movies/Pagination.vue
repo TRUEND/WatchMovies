@@ -1,5 +1,5 @@
 <template>
-    <div class='container position-relative w-100'>
+    <div v-if="!isFavorite" class='container position-relative w-100'>
         <nav id='Pagination'>
             <ul class="pagination">
 
@@ -60,10 +60,15 @@ export default {
         {
             return this.$root.listAt;
         },
+        isFavorite()
+        {
+            return this.$root.listAt == 'your_favorites';
+        }
     
     
     },
     methods:{
+        //paginate method
         ChangePage(link, arrow = false)
         {
             if(arrow == false)
@@ -113,6 +118,10 @@ export default {
         validateLink(link)
         {
             return this.actualLink == link;
+        },
+        checkIfMovieIsFavorite(MovieId)
+        {
+            return this.$root.checkIfMovieIsFavorite(MovieId);
         }
     },
     

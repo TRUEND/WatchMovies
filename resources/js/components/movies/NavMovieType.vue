@@ -3,7 +3,7 @@
         <ul class="nav nav-tabs">
             <!--main list-->
             <li v-for="(item, index) in List" :key="index" class="main-list nav-item" :class="{'active': MainListActivedItem(item)}"
-            @click="GetMovieByMainList(item)">
+            @click="GetMovieFromList(item)">
                 <span role="button" class="nav-link">{{item | remakeListName}}</span>
             </li>
             
@@ -27,7 +27,7 @@ export default {
     data()
     {
         return {
-            List:['popular', 'top_rated', 'upcoming'],
+            List:['popular', 'top_rated', 'upcoming', 'your_favorites'],
         }
     },
     computed:{
@@ -44,7 +44,7 @@ export default {
     },
     methods:
     {
-        GetMovieByMainList(stringType)
+        GetMovieFromList(stringType)
         {   
             this.$root.GetMovieFromList(stringType);
 

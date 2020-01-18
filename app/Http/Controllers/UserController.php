@@ -92,4 +92,10 @@ class UserController extends Controller
 
         return $data;
     }
+
+    //Get autheticated user with ajax.
+    public function auth_user()
+    {
+        return Auth::user();
+    }
 }

@@ -2,8 +2,8 @@
     <div id="ListVue">
 
         <div v-if="MoviesHasResults" class="container" >
+            
             <div class="row">
-
                 <div v-for="movie in Movies.results" :key="movie.id" class="col-2 mb-3">
                     <div class="card border-0" @click="GetMovieInDisplay(movie.id)">
                         
@@ -14,13 +14,12 @@
                         </div>
                     </div>
                 </div>
-                
             </div>
+
         </div>
 
-
+    
     </div>
-
 
 </template>
 
@@ -39,14 +38,22 @@ export default {
         MoviesHasResults()
         {
             return this.Movies != null;
-        }
+        },
+        isFavorite()
+        {
+            return this.$root.listAt == 'your_favorites';
+        },
+      
     },
     methods:{
         GetMovieInDisplay(movieId)
         {
             this.$root.GetMovieInDisplay(movieId);
-        }
-    }
+        },
+        
+    },
+ 
+
     
 
 }

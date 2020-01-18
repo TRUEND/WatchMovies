@@ -4,6 +4,7 @@
 
 #MovieApp {
   background: #000;
+  min-height: 100vh;
   padding: 7em 0;
 }
 
@@ -143,13 +144,23 @@
   margin: 0 0 0 5px;
 }
 
-#MovieApp #Display #AddFavorite:hover,
-#MovieApp #Display #AddFavorite .active {
-  color: #eee;
+#MovieApp #Display #AddFavorite:hover {
+  color: #eee !important;
 }
 
-#MovieApp #Display #AddFavorite:hover img,
-#MovieApp #Display #AddFavorite .active img {
-  opacity: 1;
+#MovieApp #Display #AddFavorite:hover img {
+  opacity: 1 !important;
+}
+
+#MovieApp #Display .favorited {
+  color: #eee !important;
+}
+
+#MovieApp #Display .favorited img {
+  opacity: 1 !important;
+}
+
+#MovieApp #Display .favorited:hover {
+  font-size: 1.2em;
 }
 

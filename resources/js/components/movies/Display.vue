@@ -22,8 +22,14 @@
                         <p>{{MovieInDisplay.overview}}</p>
                     </div>
 
-                    <button id="AddFavorite" class="btn" title="add to your favorite list">
-                        Add to favorite<img :src="'/_icons/heart.png'" alt="">
+                    
+                    <button @click="ToggleMovieAsFavorite(MovieInDisplay)" id="AddFavorite" class="btn" 
+                    :class="{'favorited': checkIfMovieIsFavorite(MovieInDisplay.id)}" 
+                        title="add to your favorite list">
+
+                        {{checkIfMovieIsFavorite(MovieInDisplay.id) ? 'Remove' : 'Add to favorite'}}
+
+                        <img :src="'/_icons/heart.png'" alt="">
                     </button>
                 </div>
 
@@ -42,7 +48,16 @@ export default {
         CloseDisplay()
         {
             this.$root.IsDisplay = false;
+        },
+        ToggleMovieAsFavorite(Movie)
+        {
+            this.$root.ToggleMovieAsFavorite(Movie);
+        },
+        checkIfMovieIsFavorite(MovieId)
+        {
+            return this.$root.checkIfMovieIsFavorite(MovieId);
         }
+        
     },
     computed:{
         IsDisplay()
@@ -52,8 +67,13 @@ export default {
         MovieInDisplay()
         {
             return this.$root.MovieInDisplay;
-        }
-    }
+        },
+        MovieDbIdInDisplay()
+        {
+            return this.$root.MovieDbIdInDisplay;
+        },
+    },
+    
 
 }
 </script>

@@ -1,8 +1,14 @@
 //gets the navbar style
+
+//I didn't add comments to the styles because I don't really think I need for this project,
+// since is just a test app and not for production...
+
+
 @import "_variables";
 
 #MovieApp{
     background: $mainColor;
+    min-height: 100vh;
     padding: 7em 0;
 
     #ListVue{
@@ -139,13 +145,22 @@
                 margin: 0 0 0 5px;
             }
 
-            &:hover, .active
-            {
-                color: $secondColor;
+            &:hover{
+                color: $secondColor !important;
                 img{
-                    opacity: 1;
+                    opacity: 1 !important;
                 }
-                
+            } 
+        }
+
+        .favorited{
+            color: $secondColor !important;
+            img{
+                opacity: 1 !important;
+            }
+
+            &:hover{
+                font-size: 1.2em;
             }
         }
     }
