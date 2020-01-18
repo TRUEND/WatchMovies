@@ -7,7 +7,7 @@
 <a href="https://packagist.org/packages/laravel/framework"><img src="https://poser.pugx.org/laravel/framework/license.svg" alt="License"></a>
 </p>
 
-## About Laravel Watch Movies
+## About Watch Movies
 
 Watch Movies is a tiny application with poposer of learning, I used an api called themoviedb, which is really good for movies. here it goes a list of what you can do for now on the app.
 
@@ -23,6 +23,25 @@ Watch Movies is a tiny application with poposer of learning, I used an api calle
 - **[Laravel]**
 - **[Vue]**
 - **[Some packges from npm and composer like Image/intervetion]**
+
+## How to run
+
+- Download the package.
+- You need composer and node.js/npm)
+- Enter in the directory folder you have the project
+- Run in "npm install && compose install" to install all dependencies
+- after run the "php artisan migrate" to run all the migrations
+- If the migration doesn't run please check in database folder and see if there's a file named app.sqlite, if there's not you create it and run "php artisan migrate" again.
+- Now you can start your server by typing "php artisan server".
+
+
+
+If you have any questions or problems just say something.
+
+## THIS APP ISN'T THE FINAL VERSION.
+
+
+
 
 
  
