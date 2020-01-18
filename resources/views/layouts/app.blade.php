@@ -22,7 +22,7 @@
         <nav id="MainNavBar" class="navbar navbar-expand-md shadow-sm py-2 fixed-top">
             <div class="container">
                 <a class="navbar-brand" href="@isset($User) /home @else / @endisset ">
-                    Watch Movies
+                    <img  src="{{asset('_icons/125.png')}}"> Watch Movies
                 </a>
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
                     <span class="navbar-toggler-icon"></span>
@@ -83,8 +83,11 @@
         <main>
             @yield('content')
         </main>
-    </div>
 
+        <div id="footer">
+            <p>Created and Designed By Vitor Peixoto &copy; {{date('Y')}}.</p>
+        </div>
+    </div>
 
     @yield('vue')
 </body>

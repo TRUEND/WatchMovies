@@ -11362,11 +11362,16 @@ a.text-dark:focus {
 
 #MainNavBar {
   z-index: 1000;
-  background-color: rgba(0, 0, 0, 0.9);
+  background-color: rgba(49, 48, 48, 0.726);
 }
 
 #MainNavBar * {
   color: #eee;
+}
+
+#MainNavBar .navbar-brand img {
+  width: 45px;
+  height: auto;
 }
 
 #MainNavBar #NavSearchEngine input {
@@ -11387,5 +11392,22 @@ a.text-dark:focus {
   border-radius: 50%;
   padding: 1px;
   background: #eee;
+}
+
+.cursor {
+  cursor: pointer;
+}
+
+#footer {
+  width: 100%;
+  height: auto;
+  background: #222;
+  padding: 2em 0;
+}
+
+#footer p {
+  text-align: center;
+  color: #eee;
+  margin: 0 !important;
 }
 

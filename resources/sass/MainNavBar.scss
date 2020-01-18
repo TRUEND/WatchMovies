@@ -1,9 +1,16 @@
 @import "./_variables";
 #MainNavBar{
     z-index: 1000;
-    background-color: rgba(0,0,0,0.9);
+    background-color: rgba(49, 48, 48, 0.726);
     *{
         color:$secondColor;
+    }
+    .navbar-brand
+    {
+        img{
+            width: 45px;
+            height: auto;
+        }
     }
 
     #NavSearchEngine{

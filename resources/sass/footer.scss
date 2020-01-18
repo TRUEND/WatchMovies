@@ -1,0 +1,14 @@
+@import './variables';
+#footer
+{
+    width: 100%;
+    height: auto;
+    background: $darkColor;
+    padding: 2em 0;
+
+    p{
+        text-align: center;
+        color: $lightColor;
+        margin: 0 !important;
+    }
+}
