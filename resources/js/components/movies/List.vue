@@ -4,7 +4,7 @@
         <div class="container">
             
             <div v-if="MoviesHasResults || UserHasFavoritesMovies" class="row_movies row">
-                <div v-for="movie in movies.results" :key="movie.id" class="col-2 mb-3">
+                <div v-for="movie in movies.results" :key="movie.id" class="col-6 col-sm-4 col-md-3 col-lg-2 mb-3">
                     <div class="card border-0" @click="GetMovieInDisplay(movie.id)">
                         
                         <img :src="`https://image.tmdb.org/t/p/w200/${movie.poster_path}`" class="card-img-top" alt="">

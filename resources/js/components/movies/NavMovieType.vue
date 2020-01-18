@@ -4,7 +4,7 @@
             <!--main list-->
             <li v-for="(item, index) in List" :key="index" class="main-list nav-item" :class="{'active': MainListActivedItem(item)}"
             @click="GetMovieFromList(item)">
-                <span role="button" class="nav-link">{{item | remakeListName}}</span>
+                <span role="button" class="nav-link px-2">{{item | remakeListName}}</span>
             </li>
             
             <!--genres-->

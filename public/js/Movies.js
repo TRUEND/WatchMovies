@@ -21231,38 +21231,45 @@ var render = function() {
             "div",
             { staticClass: "row_movies row" },
             _vm._l(_vm.movies.results, function(movie) {
-              return _c("div", { key: movie.id, staticClass: "col-2 mb-3" }, [
-                _c(
-                  "div",
-                  {
-                    staticClass: "card border-0",
-                    on: {
-                      click: function($event) {
-                        return _vm.GetMovieInDisplay(movie.id)
+              return _c(
+                "div",
+                {
+                  key: movie.id,
+                  staticClass: "col-6 col-sm-4 col-md-3 col-lg-2 mb-3"
+                },
+                [
+                  _c(
+                    "div",
+                    {
+                      staticClass: "card border-0",
+                      on: {
+                        click: function($event) {
+                          return _vm.GetMovieInDisplay(movie.id)
+                        }
                       }
-                    }
-                  },
-                  [
-                    _c("img", {
-                      staticClass: "card-img-top",
-                      attrs: {
-                        src:
-                          "https://image.tmdb.org/t/p/w200/" +
-                          movie.poster_path,
-                        alt: ""
-                      }
-                    }),
-                    _vm._v(" "),
-                    _c("div", { staticClass: "card-body py-2 px-0" }, [
-                      _c(
-                        "h6",
-                        { staticClass: "card-title m-0 p-0 text-light" },
-                        [_vm._v(_vm._s(movie.title))]
-                      )
-                    ])
-                  ]
-                )
-              ])
+                    },
+                    [
+                      _c("img", {
+                        staticClass: "card-img-top",
+                        attrs: {
+                          src:
+                            "https://image.tmdb.org/t/p/w200/" +
+                            movie.poster_path,
+                          alt: ""
+                        }
+                      }),
+                      _vm._v(" "),
+                      _c("div", { staticClass: "card-body py-2 px-0" }, [
+                        _c(
+                          "h6",
+                          { staticClass: "card-title m-0 p-0 text-light" },
+                          [_vm._v(_vm._s(movie.title))]
+                        )
+                      ])
+                    ]
+                  )
+                ]
+              )
             }),
             0
           )
@@ -21332,7 +21339,7 @@ var render = function() {
               [
                 _c(
                   "span",
-                  { staticClass: "nav-link", attrs: { role: "button" } },
+                  { staticClass: "nav-link px-2", attrs: { role: "button" } },
                   [_vm._v(_vm._s(_vm._f("remakeListName")(item)))]
                 )
               ]

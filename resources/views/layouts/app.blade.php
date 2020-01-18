@@ -28,7 +28,7 @@
                     <span class="navbar-toggler-icon"></span>
                 </button>
 
-                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                
                     @isset($User)
                         <!-- Search Engine * I'm going to remove it for now.-->
                         
@@ -58,7 +58,7 @@
                                     {{ strtoupper($User->nickname) }} <span class="caret"></span>
                                 </a>
 
-                                <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
+                                <div class="dropdown-menu dropdown-menu-right position-absolute" aria-labelledby="navbarDropdown">
 
                                     <a class="dropdown-item" href="{{ "/profile/".$User->nickname }}">
                                         Configurations
@@ -76,7 +76,7 @@
                             </li>
                         @endguest
                     </ul>
-                </div>
+                
             </div>
         </nav>
 
